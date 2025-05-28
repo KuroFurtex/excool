@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="view/core.css">
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;

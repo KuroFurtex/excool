@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 21, 2025 at 12:24 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: May 28, 2025 at 02:34 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `klub_db`
+-- Database: `excool`
 --
 
 -- --------------------------------------------------------
@@ -28,12 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `anggota` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `umur` int DEFAULT NULL,
+  `umur` int(11) DEFAULT NULL,
   `minat` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `anggota`
@@ -42,7 +42,9 @@ CREATE TABLE `anggota` (
 INSERT INTO `anggota` (`id`, `nama`, `email`, `umur`, `minat`) VALUES
 (1, 'Panglima Akbar', 'pang5sanz@gmail.com', 17, 'Musik'),
 (2, 'Adit bagol', 'bagolbohay@gmail.com', 18, 'Olahraga'),
-(3, 'Jorbil ', 'labubu@gmail.com', 17, 'Teknologi');
+(3, 'Jorbil', 'labubu@gmail.com', 17, 'Teknologi'),
+(4, 'Ade Ahmad K', 'ade.ahmad.kurniawan.150@gmail.com', 16, 'Musik'),
+(5, 'Mario Muh. F', 'mario.gay@gmail.com', 17, 'Olahraga');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +64,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

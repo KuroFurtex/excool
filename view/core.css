@@ -1,0 +1,61 @@
+:root {
+  /* Base Colors */
+  --cyan: #cceeff;
+  --blue: #ccccff;
+
+  /* Cyan Shades */
+  --cyan-lightest: #e6faff;
+  --cyan-light: #d6f0fb;
+  --cyan-mid: #a0e7ff;
+  --cyan-dark: #66d9ef;
+  --cyan-deep: #2ec4dd;
+
+  /* Blue Shades */
+  --blue-lightest: #f0f4ff;
+  --blue-light: #d6e0ff;
+  --blue-mid: #a6baff;
+  --blue-dark: #668cff;
+  --blue-deep: #3c5ce7;
+
+  /* Accent Colors */
+  --white: #ffffff;
+  --gray-light: #f9f9f9;
+  --gray-border: #ccc;
+  --text-dark: #333;
+}
+
+html {
+  font-family: 'Arial';
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  margin: 1em 0;
+  background-color: #ffffff;
+  border: 1px solid var(--blue-light);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+  padding: 12px 16px;
+  border: 1px solid var(--blue-light);
+  text-align: left;
+}
+
+table thead {
+  background-color: var(--blue-light);
+  color: #333;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: var(--blue-lightest);
+  transition: background-color 0.2s ease;
+}
+
