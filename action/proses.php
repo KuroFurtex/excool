@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $hasil = validasiInput($nama, $email, $umur);
     if ($hasil !== true) {
         $_SESSION['pesan'] = $hasil;
-        header("Location: sukses.php");
+        header("Location: index.php?p=anggota");
         exit;
     }
 
