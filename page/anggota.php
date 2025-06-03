@@ -10,11 +10,11 @@
 ?>
 
 <div class="collapse kf-filter <?= !$filterActive ? 'show' : '' ?>" id="filter">
-  <a href="index.php?p=data&filter=all">Semua</a>
+  <a href="index.php?p=anggota&filter=all">Semua</a>
   <?php
     $result = mysqli_query($conn, "SELECT nama_ekstra FROM ekstra");
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<a href=\"index.php?p=data&filter=" . htmlspecialchars($row['nama_ekstra']) . "\">" . htmlspecialchars($row['nama_ekstra']) . "</a>";
+        echo "<a href=\"index.php?p=anggota&filter=" . htmlspecialchars($row['nama_ekstra']) . "\">" . htmlspecialchars($row['nama_ekstra']) . "</a>";
     }
   ?>
 </div>
