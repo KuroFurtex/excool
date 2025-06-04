@@ -13,6 +13,7 @@
     <?php
         if (isset($_SESSION['pesan']) && $_SESSION['pesan'] != "") {
             echo "<h3>{$_SESSION['pesan']}</h3>";
+            $_SESSION['pesan'] = "";
         }
     ?>
     <form method="POST" action="action/proses_admin.php">

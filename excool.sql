@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2025 at 09:09 AM
+-- Generation Time: Jun 04, 2025 at 03:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,8 +43,15 @@ CREATE TABLE `absen` (
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
+(1, 'TutikGaming', '$2y$10$/fR.nfH8/O3NaM9BOIocaeMipQca7IkTz1ltd8oRYAq6N1TgmAIJe');
 
 -- --------------------------------------------------------
 
@@ -93,24 +100,26 @@ CREATE TABLE `bukti` (
 
 CREATE TABLE `ekstra` (
   `id_ekstra` int(11) NOT NULL,
-  `nama_ekstra` varchar(60) NOT NULL
+  `nama_ekstra` varchar(60) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL,
+  `foto` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ekstra`
 --
 
-INSERT INTO `ekstra` (`id_ekstra`, `nama_ekstra`) VALUES
-(1, 'Karawitan'),
-(2, 'Basket'),
-(3, 'Voli'),
-(4, 'Musik/Band'),
-(5, 'Paskib'),
-(6, 'Tari'),
-(7, 'Badminton'),
-(8, 'Silat'),
-(9, 'PMR'),
-(10, 'PIK-R');
+INSERT INTO `ekstra` (`id_ekstra`, `nama_ekstra`, `deskripsi`, `foto`) VALUES
+(1, 'Karawitan', '', ''),
+(2, 'Basket', '', ''),
+(3, 'Voli', '', ''),
+(4, 'Musik/Band', '', ''),
+(5, 'Paskib', '', ''),
+(6, 'Tari', '', ''),
+(7, 'Badminton', '', ''),
+(8, 'Silat', '', ''),
+(9, 'PMR', '', ''),
+(10, 'PIK-R', '', '');
 
 -- --------------------------------------------------------
 
@@ -182,7 +191,7 @@ ALTER TABLE `absen`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `anggota`
