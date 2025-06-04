@@ -24,6 +24,8 @@
   <div class="row" id="ekskulList">
 
     <?php
+    include 'config.php';
+    $result2 = mysqli_query($conn, "SELECT * FROM ekstra");
     $ekskul = [
       ["title" => "Pramuka", "desc" => "Melatih kedisiplinan dan kerja tim.", "img" => "https://source.unsplash.com/400x200/?pramuka"],
       ["title" => "Pencak Silat", "desc" => "Seni bela diri tradisional.", "img" => "https://source.unsplash.com/400x200/?silat"],
@@ -69,8 +71,6 @@
     <label for="minat" class="form-label">Minat</label>
     <select name="minat" class="form-select" id="minat">
         <?php
-            include 'config.php';
-            $result2 = mysqli_query($conn, "SELECT * FROM ekstra");
             $no = 1;
             while ($row2 = mysqli_fetch_assoc($result2)) {
                 echo "<option value='{$no}'>{$row2['nama_ekstra']}</option>";
