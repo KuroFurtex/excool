@@ -177,3 +177,10 @@ button {
   padding: 5px;
   background-color: var(--white);
 }
+
+input, select {
+  padding: 7px;
+  border: 1px solid var(--gray-border);
+  border-radius: 10px;
+  font-size: 16px;
+}

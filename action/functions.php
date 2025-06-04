@@ -11,4 +11,9 @@ function validasiInput($nama, $email, $umur) {
     }
     return true;
 }
+function redirectTo($page) {
+  header("Location: ../index.php?p=" . urlencode($page));
+  exit;
+}
 ?>
+

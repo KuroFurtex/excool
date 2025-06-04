@@ -6,10 +6,10 @@ include 'config.php'; // Connect to DB
 <table border="1">
   <thead>
     <tr>
-      <th>ID Bukti</th>
-      <th>ID Ekstra</th>
+      <th>No</th>
+      <th>Ekstra</th>
       <th>Foto</th>
-      <th>Tanggal Bukti</th>
+      <th>Tanggal</th>
     </tr>
   </thead>
   <tbody>

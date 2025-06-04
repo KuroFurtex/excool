@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../config.php';
+include 'functions.php';
 
 if (isset($_POST['submit'])) {
     $nama = mysqli_real_escape_string($conn, $_POST['nama']);
@@ -15,18 +16,21 @@ if (isset($_POST['submit'])) {
 
         // Use password_verify if hashed, else simple compare
         if (password_verify($pass, $admin['password'])) {
+            $_SESSION['pesan'] = "";
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_name'] = $admin['username'];
-            header("Location: ../index.php?p=dashboard"); // 🏠 redirect to admin dashboard
+            $baseUrl = dirname($_SERVER['PHP_SELF'], 2); // Go two folders up
+            redirectTo("welcome");
             exit;
         } else {
-            $_SESSION['pesan'] = "Password salah, nya~";
+            $_SESSION['pesan'] = "Password salah";
+            header("Location: ../login.php");
         }
     } else {
-        $_SESSION['pesan'] = "Admin tidak ditemukan! >w<";
+        $_SESSION['pesan'] = "Admin tidak ditemukan!";
+        header("Location: ../login.php");
     }
 
-    header("Location: ../index.php?p=login");
     exit;
 }
 ?>
