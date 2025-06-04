@@ -55,26 +55,31 @@
 
 <!-- Formulir Pendaftaran -->
 <div class="container mb-5">
-  <h3 class="mb-4">Formulir Pendaftaran Ekstrakurikuler</h3>
-  <form>
-    <div class="mb-3">
-      <label for="nama" class="form-label">Nama Lengkap</label>
-      <input type="text" class="form-control" id="nama" required>
-    </div>
-    <div class="mb-3">
-      <label for="kelas" class="form-label">Kelas</label>
-      <input type="text" class="form-control" id="kelas" required>
-    </div>
-    <div class="mb-3">
-      <label for="ekskul" class="form-label">Pilih Ekskul</label>
-      <select class="form-select" id="ekskul" required>
-        <option value="">-- Pilih Ekskul --</option>
-        <?php foreach ($ekskul as $e) {
-          echo '<option>' . $e["title"] . '</option>';
-        } ?>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Daftar</button>
+  <h2>Pendaftaran Anggota Ekstra</h2>
+  <form method="POST" action="action/proses.php">
+    <label for="nama" class="form-label">Nama Lengkap</label>
+    <input type="text" class="form-control" name="nama" id="nama" required>
+
+    <label for="email" class="form-label">Email Aktif</label>
+    <input type="text" class="form-control" name="email" id="email" required>
+
+    <label for="umur" class="form-label">Umur</label>
+    <input type="number" class="form-control" name="umur" id="umur" required>
+
+    <label for="minat" class="form-label">Minat</label>
+    <select name="minat" class="form-select" id="minat">
+        <?php
+            include 'config.php';
+            $result2 = mysqli_query($conn, "SELECT * FROM ekstra");
+            $no = 1;
+            while ($row2 = mysqli_fetch_assoc($result2)) {
+                echo "<option value='{$no}'>{$row2['nama_ekstra']}</option>";
+                $no++;
+            }
+        ?>
+    </select>
+    <br>
+    <button type="submit" class="btn kf-btn-blue" name="submit">Daftar Sekarang</button>
   </form>
 </div>
 
