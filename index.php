@@ -60,6 +60,21 @@
 				<button type="button" onclick="document.getElementById('hapusEkstra').close()">Cancel</button>
 			</form>
 		</dialog>
+		<dialog id="absen">
+			<form method="POST" action="action/absen.php">
+				<h3>Absen</h3>
+				<label>Siswa: </label>
+				<select id="ekstra" name="ekstra">
+					<?php while ($ekstra = mysqli_fetch_assoc($ekstraList)): ?>
+						<option value="<?= $ekstra['id_ekstra'] ?>" <?= ($ekstra['id_ekstra'] == $filter_ekstra) ? 'selected' : '' ?>>
+							<?= htmlspecialchars($ekstra['nama_ekstra']) ?>
+						</option>
+					<?php endwhile; ?>
+				</select>
+				<button type="submit">Submit</button>
+				<button type="button" onclick="document.getElementById('absen').close()">Cancel</button>
+			</form>
+		</dialog>
 	</body>
 	<script src="view/script.js"></script> <!-- FIXME: Yg ini error, gabisa -->
 </html>
